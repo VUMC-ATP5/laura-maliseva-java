@@ -1,5 +1,4 @@
 package lekcijaTris.majasDarbs;
-import java.math.BigInteger;
 import java.util.Scanner;
 
 public class LoopHomeWork {
