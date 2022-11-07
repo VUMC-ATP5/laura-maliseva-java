@@ -2,7 +2,7 @@ package lekcijaSesiTest.labDarbs;
 
 import lekcijaCetri.labDarbs.Rinkis;
 import org.testng.Assert;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 
 public class TestRinkis {
 
@@ -40,6 +40,26 @@ public class TestRinkis {
         Double expectedArea = 0.0;
         Double actualArea = mansRinkis.rekinatRinkaLiniju();
         Assert.assertEquals(actualArea,expectedArea);
+    }
+
+    @BeforeMethod
+    public void sagatavosanas() {
+        System.out.println("Šī metode tiek izpildīta pirms katra testa");
+    }
+
+    @AfterMethod
+    public void pecDarbibas() {
+        System.out.println("Šī metode tiek izpildīta pēc katra testa");
+    }
+
+    @BeforeTest
+    public void pirmsTesta() {
+        System.out.println("Šī ir BEFORE TEST ANOTĀCIJA");
+    }
+
+    @AfterTest
+    public void pecTesta() {
+        System.out.println("Šī ir AFTER TEST ANOTĀCIJA");
     }
 
     @Test
