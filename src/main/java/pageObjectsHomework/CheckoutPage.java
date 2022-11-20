@@ -1,4 +1,4 @@
-package lekcijaAstoni.pageObject;
+package pageObjectsHomework;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -12,16 +12,25 @@ public class CheckoutPage {
 
     private By continueButton = By.id("continue");
 
-    // jāpārbauda Jura kods
     private By errorText = By.cssSelector("h3");
 
     private By firstNameInputField = By.id("first-name");
 
+    private By lastNameInputField = By.id("last-name");
+
+    private By postalCodeInputField = By.id("postal-code");
+
+
+    public void inputPostalCodeField(String c){
+        parluks.findElement(postalCodeInputField).sendKeys(c);
+    }
+    public void inputLastNameField(String b){
+        parluks.findElement(lastNameInputField).sendKeys(b);
+    }
 
     public void inputFirstName(String a){
         parluks.findElement(firstNameInputField).sendKeys(a);
     }
-
 
     public String getErrorText(){
         return parluks.findElement(errorText).getText();

@@ -19,12 +19,17 @@ public class TestScenarijsDivi extends BaseTest {
         CartPage cartPage = new CartPage(parluks);
         Assert.assertEquals(cartPage.getPageTitle().getText(),"YOUR CART");
         cartPage.getCheckoutButton().click();
+
         CheckoutPage checkoutPage = new CheckoutPage(parluks);
         Assert.assertEquals(checkoutPage.getPageTitle().getText(), "CHECKOUT: YOUR INFORMATION");
         checkoutPage.clickContinueButton();
+
         Assert.assertEquals(checkoutPage.getErrorText(),"Error: First Name is required");
+
         checkoutPage.inputFirstName("Vārds");
-        Assert.assertEquals(checkoutPage.getPageTitle().getText(), "Error: Last Name is required");
+        checkoutPage.clickContinueButton();
+        Assert.assertEquals(checkoutPage.getErrorText(), "Error: Last Name is required");
+
         checkoutPage.clickContinueButton();
 
 
