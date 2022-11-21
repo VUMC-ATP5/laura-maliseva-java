@@ -4,9 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-public class ProductPage {
-
-    WebDriver parluks;
+public class ProductPage extends BasePage {
 
     private By pageTitle = By.cssSelector("span.title");
 
@@ -17,7 +15,7 @@ public class ProductPage {
     }
 
     public ProductPage(WebDriver parluks) {
-        this.parluks = parluks;
+        super(parluks);
     }
 
     public WebElement getPageTitle() {

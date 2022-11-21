@@ -4,11 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-public class CartPage {
-
-    WebDriver parluks;
-
-    private By pageTitle = By.className("title");
+public class CartPage extends BasePage {
 
     private By checkoutButton = By.id("checkout");
 
@@ -17,10 +13,7 @@ public class CartPage {
     }
 
     public CartPage(WebDriver parluks) {
-        this.parluks = parluks;
+        super(parluks);
     }
 
-    public WebElement getPageTitle() {
-        return parluks.findElement(pageTitle);
-    }
 }
