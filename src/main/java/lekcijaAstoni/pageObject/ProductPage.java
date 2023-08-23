@@ -10,6 +10,12 @@ public class ProductPage extends BasePage {
 
     private By cartButton = By.id("shopping_cart_container");
 
+    private By linkedInButton = By.cssSelector("li.social_linkedin > a");
+
+    public WebElement getLinkedInButton(){
+        return parluks.findElement(linkedInButton);
+    }
+
     public WebElement getCartButton(){
         return parluks.findElement(cartButton);
     }
